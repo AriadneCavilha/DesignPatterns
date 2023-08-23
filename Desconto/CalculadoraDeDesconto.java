@@ -2,7 +2,7 @@ package Desconto;
 
 import java.math.BigDecimal;
 
-import Loja.Orcamento.Orcamento;
+import loja.orcamento.Orcamento;
 
 public class CalculadoraDeDesconto {
     
@@ -12,6 +12,6 @@ public class CalculadoraDeDesconto {
                                     new SemDesconto()
                                 )
                             );
-        return desconto.calcular(orcamento);
+        return desconto.efetuarCalculo(orcamento);
     };
 }

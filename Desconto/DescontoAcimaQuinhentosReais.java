@@ -2,7 +2,7 @@ package Desconto;
 
 import java.math.BigDecimal;
 
-import Loja.Orcamento.Orcamento;
+import loja.orcamento.Orcamento;
 
 public class DescontoAcimaQuinhentosReais extends Desconto {
 
@@ -10,13 +10,13 @@ public class DescontoAcimaQuinhentosReais extends Desconto {
         super(proximo);
     }
 
-    @Override
-    public BigDecimal calcular(Orcamento orcamento) {
-        if(orcamento.getValor().compareTo(new BigDecimal("500")) > 0) {
-            return orcamento.getValor().multiply(new BigDecimal("0.1"));
-        }
-
-        return proximo.calcular(orcamento);
+    public BigDecimal efetuarCalculo(Orcamento orcamento) {
+        return orcamento.getValor().multiply(new BigDecimal("0.1"));
     }
-    
+
+    @Override
+    public boolean deveAplicar(Orcamento orcamento) {
+        return orcamento.getValor().compareTo(new BigDecimal("500")) > 0;
+    }
+
 }

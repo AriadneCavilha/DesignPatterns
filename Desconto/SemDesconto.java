@@ -2,7 +2,7 @@ package Desconto;
 
 import java.math.BigDecimal;
 
-import Loja.Orcamento.Orcamento;
+import loja.orcamento.Orcamento;
 
 public class SemDesconto extends Desconto {
 
@@ -10,9 +10,13 @@ public class SemDesconto extends Desconto {
         super(null);
     }
 
-    @Override
     public BigDecimal calcular(Orcamento orcamento) {
         return BigDecimal.ZERO;
     }
-    
+
+    @Override
+    public boolean deveAplicar(Orcamento orcamento) {
+        return true;
+    }
+
 }

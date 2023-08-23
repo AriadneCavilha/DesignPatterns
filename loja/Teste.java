@@ -1,9 +1,9 @@
-package Loja;
+package loja;
 
 import java.math.BigDecimal;
 
 import Desconto.CalculadoraDeDesconto;
-import Loja.Orcamento.Orcamento;
+import loja.orcamento.Orcamento;
 
 public class Teste {
     public static void main(String[] args) {
@@ -12,5 +12,10 @@ public class Teste {
         CalculadoraDeDesconto calculadora = new CalculadoraDeDesconto();
         System.out.println(calculadora.calcular(primeiroProduto));
         System.out.println(calculadora.calcular(segundoProduto));
+        System.out.println(primeiroProduto.getSituacao());
+        primeiroProduto.aprovar();
+        primeiroProduto.aplicarDescontoExtra();
+        System.out.println(calculadora.calcular(primeiroProduto));
+
     }
 }
